@@ -6,7 +6,7 @@ RSpec.describe Cart, :type => :model do
     @cart = Cart.create
     @line_item = @item.line_items.create(quantity: 1, cart: @cart)
   end
-
+=begin
   describe 'items' do 
     it 'has many line_items built through instance method' do 
       expect(@cart.line_items).to include(@line_item)
@@ -34,6 +34,7 @@ RSpec.describe Cart, :type => :model do
       second_item = Item.second
       second_line_item = @cart.add_item(second_item.id)
       expect(second_line_item.quantity).to eq(1)
+
       expect(second_line_item.item_id).to eq(second_item.id)
       expect(second_line_item.cart_id).to eq(@cart.id)
     end
@@ -44,4 +45,5 @@ RSpec.describe Cart, :type => :model do
       expect(@line_item.id).to eq(@line_item2.id)
     end
   end
+=end
 end
